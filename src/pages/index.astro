@@ -2,11 +2,25 @@
 import TestimonialCard from "../components/TestimonialCard.astro";
 import Layout from "../layouts/Layout.astro";
 
-const title = "Welcome to My Astro Site";
+const title = "Welcome to My Design Challenges Site";
+
+const pages = [{ title: "Testimonial Card", path: "/testimonial-card" }];
 ---
 
 <Layout title={title}>
-  <div class="flex h-screen w-full items-center justify-center bg-gray-100">
-    <TestimonialCard />
+  <div class="m-4 mx-auto">
+    <h1 class="mb-8 text-4xl font-bold">{title}</h1>
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {
+        pages.map((page) => (
+          <a
+            href={page.path}
+            class="block rounded-lg bg-white p-6 shadow transition-shadow duration-300 hover:shadow-lg"
+          >
+            <h2 class="text-xl font-semibold">{page.title}</h2>
+          </a>
+        ))
+      }
+    </div>
   </div>
 </Layout>
