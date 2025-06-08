@@ -1,0 +1,26 @@
+---
+import Buttons from "../../components/hero-section-simple/Buttons.astro";
+import Description from "../../components/hero-section-simple/Description.astro";
+import Layout from "../../layouts/Layout.astro";
+
+const title = "Hero Section Simple Challenge";
+---
+
+<Layout title={title}>
+  <div
+    class="flex size-full items-center justify-center rounded-md bg-white p-4 shadow-lg md:p-8"
+  >
+    <div
+      class="flex h-full max-w-7xl flex-col items-center justify-center gap-12 md:gap-8 xl:flex-row"
+    >
+      <div class="flex flex-col items-center gap-8 md:items-start md:gap-16">
+        <Description
+          title="Well crafted abstract images"
+          subtitle="High quality abstract images for your projects, wallpaper and presentations."
+        />
+        <Buttons />
+      </div>
+      <img class="w-2xl" src="/assets/img/prism.png" alt="Prism" />
+    </div>
+  </div>
+</Layout>
