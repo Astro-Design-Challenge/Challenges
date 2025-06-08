@@ -1,22 +1,23 @@
 ---
+interface Props {
+  image: string;
+  name: string;
+  username: string;
+  testimonial: string;
+}
 
+const { image, name, username, testimonial } = Astro.props as Props;
 ---
 
-<div class="max-w-sm gap-4 rounded-lg bg-white p-6 shadow-md">
+<div class="max-w-sm gap-4 rounded-lg bg-white p-6 shadow-sm">
   <div class="flex items-center gap-4">
-    <img
-      class="size-12"
-      src="/assets/img/profile.png"
-      alt="Profile picture"
-    />
+    <img class="size-12" src={image} alt="Profile picture" />
     <div>
-      <h3 class="text-lg font-semibold text-neutral-900">Sarah Dole</h3>
-      <p class="text-sm text-neutral-600">@sarahdole</p>
+      <h3 class="text-lg font-semibold text-neutral-900">{name}</h3>
+      <p class="text-sm text-neutral-600">{username}</p>
     </div>
   </div>
-  <p class="text-base text-neutral-600">
-    I've been searching for high-quality abstract images for my design projects,
-    and I'm thrilled to have found this platform. The variety and depth of
-    creativity are astounding!
+  <p class="mt-4 text-base text-neutral-600">
+    {testimonial}
   </p>
 </div>

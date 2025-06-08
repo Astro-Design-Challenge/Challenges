@@ -4,7 +4,10 @@ import Layout from "../layouts/Layout.astro";
 
 const title = "Welcome to My Design Challenges Site";
 
-const pages = [{ title: "Testimonial Card", path: "/testimonial-card" }];
+const pages = [
+  { title: "Testimonial Card", path: "/testimonial-card" },
+  { title: "Blog Card", path: "/blog-card" },
+];
 ---
 
 <Layout title={title}>
@@ -17,7 +20,7 @@ const pages = [{ title: "Testimonial Card", path: "/testimonial-card" }];
             href={page.path}
             class="block rounded-lg bg-white p-6 shadow transition-shadow duration-300 hover:shadow-lg"
           >
-            <h2 class="text-xl font-semibold">{page.title}</h2>
+            <h2 class="text-center text-xl font-semibold">{page.title}</h2>
           </a>
         ))
       }
